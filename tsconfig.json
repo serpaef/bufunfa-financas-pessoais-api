@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es6",
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "esModuleInterop": true,
-    "emitDecoratorMetadata": true,
+    "target": "ES2015",
+    "module": "CommonJS",
     "experimentalDecorators": true,
-    "sourceMap": true,
-    "strict": true
+    "emitDecoratorMetadata": true,
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true,
+    "moduleResolution": "node"
   },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
