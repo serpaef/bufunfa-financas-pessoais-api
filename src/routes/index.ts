@@ -1,3 +1,7 @@
+import { DeleteTypeController } from './../controllers/transactionTypes/DeleteTypeController';
+import { GetOneTypeController } from './../controllers/transactionTypes/GetOneTypeController';
+import { GetAllTypesController } from './../controllers/transactionTypes/GetAllTypesController';
+import { CreateTypeController } from './../controllers/transactionTypes/CreateTypeController';
 import { UpdateCategoryController } from './../controllers/categories/UpdateCategoryController';
 import { DeleteCategoryController } from './../controllers/categories/DeleteCategoryController';
 import { GetOneCategoryController } from './../controllers/categories/GetOneCategoryController';
@@ -17,5 +21,15 @@ routes
     .get(new GetOneCategoryController().handle)
     .delete(new DeleteCategoryController().handle)
     .put(new UpdateCategoryController().handle);
+
+routes
+  .route('/transaction-types')
+    .post(new CreateTypeController().handle)
+    .get(new GetAllTypesController().handle);
+
+routes
+  .route('/transaction-types/:id')
+    .get(new GetOneTypeController().handle)
+    .delete(new DeleteTypeController().handle);
 
 export { routes };
