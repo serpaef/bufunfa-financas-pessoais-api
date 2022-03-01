@@ -1,3 +1,4 @@
+import { UpdateCategoryController } from './../controllers/categories/UpdateCategoryController';
 import { DeleteCategoryController } from './../controllers/categories/DeleteCategoryController';
 import { GetOneCategoryController } from './../controllers/categories/GetOneCategoryController';
 import { GetAllCategoriesController } from './../controllers/categories/GetAllCategoriesController';
@@ -7,13 +8,14 @@ import { Router } from 'express';
 const routes = Router();
 
 routes
-  .route('/categories/:id')
-    .get(new GetOneCategoryController().handle)
-    .delete(new DeleteCategoryController().handle);
-
-routes
   .route('/categories')
     .post(new CreateCategoryController().handle)
     .get(new GetAllCategoriesController().handle);
+
+routes
+  .route('/categories/:id')
+    .get(new GetOneCategoryController().handle)
+    .delete(new DeleteCategoryController().handle)
+    .put(new UpdateCategoryController().handle);
 
 export { routes };
