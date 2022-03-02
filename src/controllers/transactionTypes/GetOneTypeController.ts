@@ -1,4 +1,4 @@
-import { GetOneTypeService } from './../../services/transactionTypes/GetOneTypeService';
+import { GetOneTypeService } from '../../services/transactionTypes/GetOneTypeService';
 import { Request, Response } from 'express';
 
 export class GetOneTypeController {
