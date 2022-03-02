@@ -1,11 +1,12 @@
-import { DeleteTypeController } from './../controllers/transactionTypes/DeleteTypeController';
-import { GetOneTypeController } from './../controllers/transactionTypes/GetOneTypeController';
-import { GetAllTypesController } from './../controllers/transactionTypes/GetAllTypesController';
-import { CreateTypeController } from './../controllers/transactionTypes/CreateTypeController';
-import { UpdateCategoryController } from './../controllers/categories/UpdateCategoryController';
-import { DeleteCategoryController } from './../controllers/categories/DeleteCategoryController';
-import { GetOneCategoryController } from './../controllers/categories/GetOneCategoryController';
-import { GetAllCategoriesController } from './../controllers/categories/GetAllCategoriesController';
+import { UpdateTypeController } from '../controllers/transactionTypes/UpdateTypeController';
+import { DeleteTypeController } from '../controllers/transactionTypes/DeleteTypeController';
+import { GetOneTypeController } from '../controllers/transactionTypes/GetOneTypeController';
+import { GetAllTypesController } from '../controllers/transactionTypes/GetAllTypesController';
+import { CreateTypeController } from '../controllers/transactionTypes/CreateTypeController';
+import { UpdateCategoryController } from '../controllers/categories/UpdateCategoryController';
+import { DeleteCategoryController } from '../controllers/categories/DeleteCategoryController';
+import { GetOneCategoryController } from '../controllers/categories/GetOneCategoryController';
+import { GetAllCategoriesController } from '../controllers/categories/GetAllCategoriesController';
 import { CreateCategoryController } from '../controllers/categories/CreateCategoryController';
 import { Router } from 'express';
 
@@ -30,6 +31,7 @@ routes
 routes
   .route('/transaction-types/:id')
     .get(new GetOneTypeController().handle)
-    .delete(new DeleteTypeController().handle);
+    .delete(new DeleteTypeController().handle)
+    .put(new UpdateTypeController().handle);
 
 export { routes };
