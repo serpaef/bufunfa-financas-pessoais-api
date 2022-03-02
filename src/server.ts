@@ -3,7 +3,7 @@ import './database';
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-import { categories, types } from './routes'
+import { categories, types, accounts } from './routes'
 
 dotenv.config();
 
@@ -14,5 +14,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(categories);
 app.use(types);
+app.use(accounts);
 
 app.listen(PORT, () => { console.log(`Listening on Port ${PORT}`) });
