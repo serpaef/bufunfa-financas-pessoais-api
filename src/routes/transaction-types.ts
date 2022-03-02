@@ -3,7 +3,19 @@ import { DeleteTypeController } from '../controllers/transactionTypes/DeleteType
 import { GetOneTypeController } from '../controllers/transactionTypes/GetOneTypeController';
 import { GetAllTypesController } from '../controllers/transactionTypes/GetAllTypesController';
 import { CreateTypeController } from '../controllers/transactionTypes/CreateTypeController';
-import { categories } from './categories';
-import { types } from './transaction-types';
+import { Router } from 'express';
 
-export { categories, types };
+const types = Router();
+
+types
+  .route('/transaction-types')
+    .post(new CreateTypeController().handle)
+    .get(new GetAllTypesController().handle);
+
+types
+  .route('/transaction-types/:id')
+    .get(new GetOneTypeController().handle)
+    .delete(new DeleteTypeController().handle)
+    .put(new UpdateTypeController().handle);
+
+export { types };
