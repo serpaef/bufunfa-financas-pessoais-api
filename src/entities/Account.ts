@@ -9,5 +9,5 @@ export class Account {
   name: string;
 
   @Column('double')
-  value: number;
+  balance: number;
 }
