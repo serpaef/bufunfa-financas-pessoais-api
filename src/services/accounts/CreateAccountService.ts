@@ -14,7 +14,7 @@ export class CreateAccountService {
 
     const accountReq = {
       name,
-      value: 0.0,
+      balance: 0.00,
     }
 
     const account = repo.create(accountReq);
