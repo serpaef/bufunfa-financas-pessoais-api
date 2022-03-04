@@ -14,7 +14,7 @@ export class AddBalanceService {
 
     if (!account) return new Error('Account not found');
 
-    account.balance += Math.abs(value);
+    account.balance += value;
 
     await repo.save(account);
 
