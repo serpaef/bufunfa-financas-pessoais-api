@@ -1,6 +1,5 @@
 import { DeleteGoalService } from '../../services/goals/DeleteGoalService';
 import { Request, Response } from 'express';
-import { endianness } from 'os';
 
 export class DeleteGoalController {
   async handle(req: Request, res: Response) {
