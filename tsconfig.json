@@ -6,7 +6,7 @@
     "emitDecoratorMetadata": true,
     "rootDir": "./src",
     "baseUrl": "./",
-    "outDir": "dist",
+    "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
