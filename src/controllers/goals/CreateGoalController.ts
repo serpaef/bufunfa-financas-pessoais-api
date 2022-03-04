@@ -4,11 +4,9 @@ import { Request, Response } from 'express';
 export class CreateGoalController {
   async handle(req: Request, res: Response) {
     try {
-      const { title, valueToAchieve, deadline } = req.body;
-
       const service = new CreateGoalService();
 
-      const goal = await service.execute({ title, valueToAchieve, deadline });
+      const goal = await service.execute(req.body);
 
       return res.status(200).json(goal);
     } catch ({ message }) {
