@@ -1,3 +1,4 @@
+import { DeleteGoalController } from './../controllers/goals/DeleteGoalController';
 import { GetOneGoalController } from './../controllers/goals/GetOneGoalController';
 import { GetAllGoalsController } from '../controllers/goals/GetAllGoalsController';
 import { CreateGoalController } from '../controllers/goals/CreateGoalController';
@@ -16,6 +17,7 @@ goals
 
 goals
   .route('/goals/:id')
-    .get( new GetOneGoalController().handle);
+    .get( new GetOneGoalController().handle)
+    .delete( new DeleteGoalController().handle);
 
 export { goals };
