@@ -1,3 +1,4 @@
+import { GetOneGoalController } from './../controllers/goals/GetOneGoalController';
 import { GetAllGoalsController } from '../controllers/goals/GetAllGoalsController';
 import { CreateGoalController } from '../controllers/goals/CreateGoalController';
 import { VerifyGoalMiddleware } from '../controllers/goals/VerifyGoalMiddleware';
@@ -12,5 +13,9 @@ goals
       new CreateGoalController().handle
     )
     .get( new GetAllGoalsController().handle);
+
+goals
+  .route('/goals/:id')
+    .get( new GetOneGoalController().handle);
 
 export { goals };
