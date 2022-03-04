@@ -1,6 +1,3 @@
-import { Goal } from '../../entities/Goal';
-import { getRepository } from 'typeorm';
-
 type GoalRequest = {
   title: string;
   valueToAchieve: number;
