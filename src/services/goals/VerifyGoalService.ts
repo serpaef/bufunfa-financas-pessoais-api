@@ -8,8 +8,8 @@ type GoalRequest = {
 }
 
 export class VerifyGoalService {
-  async execute({title, valueToAchieve, deadline}: GoalRequest) {
-    if (!title) return new Error('title is required');
+  execute({title, valueToAchieve, deadline}: GoalRequest) {
+    if (!title || title.length < 1) return new Error('title is required');
 
     if (typeof title !== 'string') return new Error('title must be a string');
     
