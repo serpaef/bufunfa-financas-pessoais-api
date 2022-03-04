@@ -15,7 +15,7 @@ export class CreateGoalService {
       title,
       valueToAchieve,
       reachedValue: 0,
-      start: Date.now(),
+      start: new Date(Date.now()),
       deadline,
     }
 
