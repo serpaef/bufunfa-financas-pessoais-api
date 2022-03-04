@@ -18,4 +18,4 @@ accounts
     .delete(new DeleteAccountController().handle)
     .put(new UpdateAccountController().handle);
 
-export { accounts }
+export { accounts };
