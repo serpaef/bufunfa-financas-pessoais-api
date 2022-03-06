@@ -11,7 +11,9 @@ export class GetOneTransactionService {
 
     const repo = getRepository(Transaction);
 
-    const transaction = await repo.findOne(id);
+    const transaction = await repo.findOne(id, {
+      relations: ['category', 'goal', 'transactionType'],
+    });
 
     if (!transaction) return new Error('Transaction not found');
 
