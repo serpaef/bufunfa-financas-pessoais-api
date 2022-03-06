@@ -15,7 +15,7 @@ export class CreateTransactions1645800327743 implements MigrationInterface {
           },
           { name: 'accountId', type: 'int' },
           { name: 'typeId', type: 'int' },
-          { name: 'description', type: 'int' },
+          { name: 'description', type: 'varchar' },
           { name: 'categoryId', type: 'int' },
           { name: 'goalId', type: 'int', isNullable: true },
           { name: 'date', type: 'date' },
