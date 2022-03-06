@@ -5,7 +5,7 @@ export class GetAllTransactionsService {
   async execute() {
     const repo = getRepository(Transaction);
 
-    const transactions = await repo.find();
+    const transactions = await repo.find({relations: ['category', 'goal', 'transactionType']});
 
     return transactions;
   }
