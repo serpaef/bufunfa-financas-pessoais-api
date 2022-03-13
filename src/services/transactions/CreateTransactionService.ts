@@ -3,8 +3,8 @@ import { getRepository } from 'typeorm';
 import { AddBalanceService } from '../accounts/AddBalanceService';
 import { RemoveBalanceService } from '../accounts/RemoveBalanceService';
 
-const DEPOSIT = 1;
-const PAYMENT = 2;
+const RECEIPT = 1;
+const EXPENSE = 2;
 
 type TransactionRequest = {
   accountId: number;
@@ -36,12 +36,12 @@ export class CreateTransactionService {
       value,
     };
     
-    if (typeId === DEPOSIT) {
+    if (typeId === RECEIPT) {
       const service = new AddBalanceService();
       await service.execute({id: ''+accountId, value});
     }
     
-    if (typeId === PAYMENT) {
+    if (typeId === EXPENSE) {
       const service = new RemoveBalanceService();
       await service.execute({id: ''+accountId, value});
     }
