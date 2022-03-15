@@ -2,6 +2,7 @@ import { Transaction } from '../../entities/Transaction';
 import { getRepository } from 'typeorm';
 import { AddBalanceService } from '../accounts/AddBalanceService';
 import { RemoveBalanceService } from '../accounts/RemoveBalanceService';
+import { UpdateGoalService } from '../goals/UpdateGoalService';
 
 const RECEIPT = 1;
 const EXPENSE = 2;
@@ -11,7 +12,7 @@ type TransactionRequest = {
   typeId: number;
   description: string;
   categoryId: number;
-  goalId?: number;
+  goalId: number;
   value: number;
 };
 
@@ -43,7 +44,9 @@ export class CreateTransactionService {
     
     if (typeId === EXPENSE) {
       const service = new RemoveBalanceService();
+      const goalService = new UpdateGoalService();
       await service.execute({id: ''+accountId, value});
+      await goalService.execute({id: goalId, value})
     }
 
     const transaction = repo.create(transactionToRegister);
